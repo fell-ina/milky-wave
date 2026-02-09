@@ -1,0 +1,191 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff9f0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo Border */
+.logo-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #ff9a76;
+  border-radius: 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #ff9a76;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.product-card {
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 30px;
+}
+.btn-primary,
+.btn-wa {
+  display: inline-block;
+  background: #ff9a76;
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+.btn-wa {
+  background: #25d366;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* Form Styles */
+.input-group {
+  margin-bottom: 15px;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.flavor-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  background: #fdf2f0;
+  padding: 10px;
+  border-radius: 8px;
+}
+.flavor-row input {
+  width: 60px;
+}
+.back-link {
+  margin-bottom: 20px;
+}
+.back-link a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+}
+/* Styling Logo agar Bulat */
+.logo-container {
+  width: 150px; /* Ukuran lebar logo */
+  height: 150px; /* Ukuran tinggi logo */
+  margin: 0 auto 20px; /* Rata tengah dan jarak bawah */
+  border: 5px solid #ff9a76; /* Border warna peach sesuai tema */
+  border-radius: 50%; /* Membuat frame menjadi bulat */
+  overflow: hidden; /* Memotong gambar agar tetap di dalam lingkaran */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Background hitam agar menyatu dengan logo */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+}
+
+.main-logo {
+  width: 100%; /* Gambar memenuhi lebar container */
+  height: 100%; /* Gambar memenuhi tinggi container */
+  object-fit: cover; /* Memastikan gambar tidak gepeng */
+  border-radius: 50%; /* Memastikan gambar juga bulat */
+}
+/* 1. Animasi Mengambang untuk Logo */
+.logo-container {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  } /* Logo naik sedikit */
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* 2. Animasi Kartu Produk Saat Di-hover */
+.product-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02); /* Naik & membesar sedikit */
+  border-color: #ff9a76;
+  box-shadow: 0 10px 20px rgba(255, 154, 118, 0.2);
+  cursor: pointer;
+}
+
+/* 3. Efek Pulse pada Tombol Pesan */
+.btn-primary {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 154, 118, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 154, 118, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 154, 118, 0);
+  }
+}
+
+/* Tambahan: Transisi halus saat pindah halaman */
+body {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pesan MilkyWave</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="back-link">
+        <a href="index.html">&larr; Kembali ke Katalog</a>
+      </div>
+
+      <section class="form-section">
+        <h2>Detail Pemesanan</h2>
+        <form id="sujelForm">
+          <div class="input-group">
+            <label>Nama Pembeli:</label>
+            <input
+              type="text"
+              id="nama"
+              placeholder="Nama lengkap Anda"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Tanggal Pengambilan:</label>
+            <input type="date" id="tanggal" required />
+          </div>
+
+          <div class="flavor-selection">
+            <label>Pilih Jumlah Per Rasa (Rp 5.000/botol):</label>
+            <div class="flavor-row">
+              <span>Original</span>
+              <input type="number" id="q_ori" value="0" min="0" />
+            </div>
+            <div class="flavor-row">
+              <span>Stroberi</span>
+              <input type="number" id="q_stro" value="0" min="0" />
+            </div>
+            <div class="flavor-row">
+              <span>Coklat</span>
+              <input type="number" id="q_cok" value="0" min="0" />
+            </div>
+            <div class="flavor-row">
+              <span>Mangga</span>
+              <input type="number" id="q_mang" value="0" min="0" />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label>Metode Pembayaran:</label>
+            <select id="payMethod">
+              <option value="Cash di Tempat (COD)">Cash di Tempat (COD)</option>
+              <option value="Transfer / QRIS">Uang Digital / QRIS</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Metode Pengambilan:</label>
+            <select id="pickMethod">
+              <option value="Ambil Sendiri">Ambil di Rumah Penjual</option>
+              <option value="Ojek Online">Jasa Ojek Online</option>
+            </select>
+          </div>
+
+          <button type="button" onclick="kirimWA()" class="btn-wa">
+            Kirim ke WhatsApp
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
