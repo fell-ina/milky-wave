@@ -1,5 +1,5 @@
 function kirimWA(nomorTujuan) {
-    // Ambil data dari form
+    // 1. Ambil data dari form
     const nama = document.getElementById('nama').value;
     const tanggal = document.getElementById('tanggal').value;
     const ori = document.getElementById('q_ori').value;
@@ -9,26 +9,27 @@ function kirimWA(nomorTujuan) {
     const bayar = document.getElementById('payMethod').value;
     const ambil = document.getElementById('pickMethod').value;
 
-    // Validasi minimal nama diisi
-    if (nama === "" || tanggal === "") {
-        alert("Nama dan Tanggal jangan kosong ya le!");
+    // 2. Validasi: Jangan sampai Nama/Tanggal kosong
+    if (nama.trim() === "" || tanggal === "") {
+        alert("Nama dan Tanggal pengambilan harus diisi dulu ya le!");
         return;
     }
 
-    // Hitung total harga
+    // 3. Hitung total botol dan harga
     const totalBotol = parseInt(ori) + parseInt(stro) + parseInt(cok) + parseInt(mang);
     const totalHarga = totalBotol * 5000;
 
-    if (totalBotol === 0) {
+    // 4. Validasi: Harus pesan minimal 1
+    if (totalBotol <= 0) {
         alert("Pilih minimal 1 botol dulu le!");
         return;
     }
 
-    // Susun pesan teks
+    // 5. Susun format pesan WhatsApp biar rapi
     let pesan = `*PESANAN MILKY WAVE*\n`;
     pesan += `--------------------------\n`;
     pesan += `*Nama:* ${nama}\n`;
-    pesan += `*Tanggal Ambil:* ${tanggal}\n\n`;
+    pesan += `*Tanggal:* ${tanggal}\n\n`;
     pesan += `*Detail Pesanan:*\n`;
     if (ori > 0) pesan += `- Original: ${ori}\n`;
     if (stro > 0) pesan += `- Stroberi: ${stro}\n`;
@@ -40,7 +41,7 @@ function kirimWA(nomorTujuan) {
     pesan += `*Bayar via:* ${bayar}\n`;
     pesan += `*Metode:* ${ambil}\n`;
 
-    // Kirim ke WhatsApp
+    // 6. Buka link WhatsApp
     const url = `https://api.whatsapp.com/send?phone=${nomorTujuan}&text=${encodeURIComponent(pesan)}`;
     window.open(url, '_blank');
 }
